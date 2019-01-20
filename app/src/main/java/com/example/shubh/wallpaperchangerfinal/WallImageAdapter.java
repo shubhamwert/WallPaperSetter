@@ -1,26 +1,23 @@
 package com.example.shubh.wallpaperchangerfinal;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import static android.content.ContentValues.TAG;
 
 public class WallImageAdapter extends RecyclerView.Adapter<WallImageAdapter.ViewHolder>  {
-Context mContext;
+private Context mContext;
 private ArrayList<ImageStoring> mData;
-int postion=0;
+private int postion=0;
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView mtextView;
@@ -49,8 +46,9 @@ public WallImageAdapter(Context Context,ArrayList<ImageStoring> arrayList){
 
 
 
+    @NonNull
     @Override
-    public WallImageAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public WallImageAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
     View mView=LayoutInflater.from(parent.getContext()).inflate(R.layout.image_list,parent,false);
     mView.setPadding(11,11,11,11);
     mView.setElevation(0.4f);
@@ -60,7 +58,7 @@ public WallImageAdapter(Context Context,ArrayList<ImageStoring> arrayList){
     }
 
     @Override
-    public void onBindViewHolder(WallImageAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull WallImageAdapter.ViewHolder holder, int position) {
         ImageStoring imgs=mData.get(position);
 
 

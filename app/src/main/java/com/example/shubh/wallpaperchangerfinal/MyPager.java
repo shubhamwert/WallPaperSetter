@@ -10,21 +10,22 @@ import android.widget.ImageView;
 
 public class MyPager extends PagerAdapter {
     private Context mContext;
-    private int[] mImages=new int[]{R.drawable.abstaract,R.drawable.abstratc};
+    MyDataSet myDataSet;
 
     public MyPager(Context context){
         mContext=context;
+        myDataSet=new MyDataSet();
     }
     @Override
     public int getCount() {
-        return mImages.length;
+        return myDataSet.getCount();
     }
 
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, final int position) {
         ImageView imageView=new ImageView(mContext);
-        imageView.setImageResource(mImages[position]);
+        imageView.setImageResource(myDataSet.getId(position));
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
 
         container.addView(imageView,0,200);

@@ -30,6 +30,8 @@
     android:layout_alignParentEnd="true"
     android:layout_alignParentBottom="true"
     android:padding="12dp"
+    android:layout_margin="12dp"
+    android:src="@android:drawable/star_on"
 
     android:id="@+id/mFabButton"
     />
