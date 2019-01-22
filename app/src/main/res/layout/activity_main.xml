@@ -24,17 +24,18 @@
         android:layout_height="0dp"
         android:layout_weight="3"/>
 </LinearLayout>
-<android.support.design.widget.FloatingActionButton
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentEnd="true"
-    android:layout_alignParentBottom="true"
-    android:padding="12dp"
-    android:layout_margin="12dp"
-    android:src="@android:drawable/star_on"
 
-    android:id="@+id/mFabButton"
-    />
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/mFabButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="305dp"
+        android:layout_marginEnd="41dp"
+        android:src="@android:drawable/star_on"
+        tools:srcCompat="@tools:sample/avatars" />
 
 
 </RelativeLayout>

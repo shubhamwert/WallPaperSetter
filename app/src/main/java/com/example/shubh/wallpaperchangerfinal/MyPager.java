@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class MyPager extends PagerAdapter {
     private Context mContext;
