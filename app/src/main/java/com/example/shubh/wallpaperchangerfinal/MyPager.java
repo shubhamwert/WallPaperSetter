@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 public class MyPager extends PagerAdapter {
     private Context mContext;
-    MyDataSet myDataSet;
+    private MyDataSet myDataSet;
 
     public MyPager(Context context){
         mContext=context;

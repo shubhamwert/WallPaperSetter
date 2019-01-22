@@ -25,12 +25,9 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 //TODO Add listner to recycler View
-//Todo visual polish
 //TODO storing images from phone
 
 public class MainActivity extends AppCompatActivity {
-    private ArrayList<ImageStoring> ImageList = new ArrayList<>();
-
     WallImageAdapter wallImageAdapter;
     FloatingActionButton mFabButton;
     ViewPager viewPager;
@@ -62,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
                 try {
 
-                    myWallpaperManager.setResource(ImageList.get(viewPager.getCurrentItem()).getmId());
+                    myWallpaperManager.setResource(myDataSet.getId(viewPager.getCurrentItem()));
 
                     Toast.makeText(MainActivity.this,
                             "Wallpaper successfully changed", Toast.LENGTH_SHORT)
@@ -80,10 +77,11 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        wallImageAdapter =new WallImageAdapter(this,ImageList);
+        wallImageAdapter =new WallImageAdapter(this,myDataSet.getmData());
         recyclerView.setAdapter(wallImageAdapter);
         recyclerView.setHasFixedSize(true);
         startPreparingData();
+
     }
 
     private void setViewPager() {
@@ -94,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void startPreparingData() {
 
-ImageList.addAll(0,MyDataSet.getmData());
+
         wallImageAdapter.notifyDataSetChanged();
     }
 
